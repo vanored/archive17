@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>BENEATH</title>
+    <title>ARCHIVE 17</title>
 
     <style>
         * {
@@ -23,15 +23,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-
-            padding: 30px;
         }
 
         .terminal {
-            width: 800px;
-            max-width: 95%;
+            width: 700px;
+            max-width: 90%;
 
-            padding: 40px;
+            padding: 35px;
 
             border: 1px solid #333;
             background: #080808;
@@ -41,69 +39,97 @@
         }
 
         h1 {
-            margin: 0 0 15px;
+            margin: 0 0 10px;
 
-            text-align: center;
-
-            font-size: 52px;
-            letter-spacing: 12px;
-
-            font-weight: normal;
-
-            color: #b8ffb8;
+            font-size: 32px;
+            letter-spacing: 5px;
         }
 
         .line {
             height: 1px;
             background: #222;
 
-            margin: 30px 0;
+            margin: 25px 0;
         }
 
-        .text {
-            color: #888;
-
-            font-size: 16px;
-
-            line-height: 1.9;
-
-            text-align: left;
+        .status {
+            color: #777;
+            line-height: 1.8;
         }
 
-        .hint {
-            margin-top: 25px;
+        .green {
+            color: #b8ffb8;
+        }
 
-            padding: 20px;
+        button {
+            margin-top: 30px;
 
-            border: 1px solid #292929;
+            padding: 12px 25px;
 
-            background: #060606;
+            background: transparent;
+            border: 1px solid #555;
 
             color: #b8ffb8;
 
-            line-height: 2;
-        }
-
-        .example {
-            margin-top: 20px;
-
-            color: #777;
-
+            font-family: "Courier New", monospace;
             font-size: 15px;
+
+            cursor: pointer;
         }
 
-        .final {
-            margin-top: 30px;
-
-            text-align: center;
-
-            color: #555;
-
-            font-size: 13px;
-
-            letter-spacing: 2px;
+        button:hover {
+            background: #101510;
+            border-color: #b8ffb8;
         }
 
+        #accessBox {
+            display: none;
+            margin-top: 25px;
+        }
+
+        #codeInput {
+            width: 100%;
+            padding: 12px;
+
+            background: #050505;
+            border: 1px solid #444;
+
+            color: #b8ffb8;
+
+            font-family: "Courier New", monospace;
+            font-size: 15px;
+
+            outline: none;
+        }
+
+        #codeInput:focus {
+            border-color: #b8ffb8;
+        }
+
+        #message {
+            margin-top: 15px;
+
+            min-height: 25px;
+
+            color: #888;
+        }
+
+        .cursor {
+            display: inline-block;
+
+            width: 8px;
+            height: 16px;
+
+            background: #b8ffb8;
+
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 
@@ -111,55 +137,107 @@
 
 <div class="terminal">
 
-    <h1>BENEATH</h1>
+    <h1>ARCHIVE 17</h1>
+
+    <div class="green">
+        RECOVERY SYSTEM
+    </div>
 
     <div class="line"></div>
 
-    <div class="text">
+    <div class="status">
 
-        Некоторые цифры — это не просто цифры.<br>
-        Иногда ответ уже спрятан в самом названии.
+        DATABASE:
+        <span class="green">DAMAGED</span>
 
-    </div>
-
-    <div class="hint">
-
-        <strong>3 — «три» — 3 буквы.</strong>
-
-        <br><br>
-
-        Найди среди чисел то, у которого
         <br>
-        количество букв в его названии
+
+        FILES RECOVERED:
+        <span class="green">37%</span>
+
         <br>
-        совпадает с самим числом.
 
-    </div>
+        SYSTEM STATUS:
+        <span class="green">ONLINE</span>
 
-    <div class="example">
+        <br>
 
-        1 — один<br>
-        2 — два<br>
-        3 — три<br>
-        4 — четыре<br>
-        5 — пять<br>
-        6 — шесть<br>
-        7 — семь<br>
-        8 — восемь<br>
-        9 — девять<br>
-        10 — десять
+        ACCESS:
+        <span class="green">RESTRICTED</span>
 
     </div>
 
     <div class="line"></div>
 
-    <div class="final">
+    <button onclick="enterArchive()">
+        ENTER
+    </button>
 
-        ОТВЕТ — СЛЕДУЮЩИЙ КЛЮЧ
+    <div id="accessBox">
+
+        <div class="green">
+            ENTER ACCESS CODE:
+        </div>
+
+        <br>
+
+        <input
+            type="text"
+            id="codeInput"
+            placeholder="/archive17/"
+            autocomplete="off"
+            onkeydown="checkCode(event)"
+        >
+
+        <div id="message"></div>
 
     </div>
+
+    <span class="cursor"></span>
 
 </div>
+
+<script>
+
+function enterArchive() {
+
+    document.getElementById("accessBox").style.display = "block";
+
+    document.getElementById("codeInput").focus();
+
+}
+
+function checkCode(event) {
+
+    if (event.key === "Enter") {
+
+        const code =
+            document.getElementById("codeInput").value.trim();
+
+        if (code === "/archive17/") {
+
+            window.location.href = "archive17.html";
+
+        }
+
+        else if (code === "/beneath/") {
+
+            window.location.href = "beneath.html";
+
+        }
+
+        else {
+
+            document.getElementById("message").innerHTML =
+                "ACCESS DENIED";
+
+        }
+
+    }
+
+}
+
+</script>
 
 </body>
 </html>
