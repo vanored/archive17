@@ -82,8 +82,32 @@
             border-color: #b8ffb8;
         }
 
-        #message {
+        #accessBox {
+            display: none;
             margin-top: 25px;
+        }
+
+        #codeInput {
+            width: 100%;
+            padding: 12px;
+
+            background: #050505;
+            border: 1px solid #444;
+
+            color: #b8ffb8;
+
+            font-family: "Courier New", monospace;
+            font-size: 15px;
+
+            outline: none;
+        }
+
+        #codeInput:focus {
+            border-color: #b8ffb8;
+        }
+
+        #message {
+            margin-top: 15px;
 
             min-height: 25px;
 
@@ -149,7 +173,25 @@
         ENTER
     </button>
 
-    <div id="message"></div>
+    <div id="accessBox">
+
+        <div class="green">
+            ENTER ACCESS CODE:
+        </div>
+
+        <br>
+
+        <input
+            type="text"
+            id="codeInput"
+            placeholder="/archive17/"
+            autocomplete="off"
+            onkeydown="checkCode(event)"
+        >
+
+        <div id="message"></div>
+
+    </div>
 
     <span class="cursor"></span>
 
@@ -159,8 +201,31 @@
 
 function enterArchive() {
 
-    document.getElementById("message").innerHTML =
-        "AUTHORIZATION REQUIRED";
+    document.getElementById("accessBox").style.display = "block";
+
+    document.getElementById("codeInput").focus();
+
+}
+
+function checkCode(event) {
+
+    if (event.key === "Enter") {
+
+        const code =
+            document.getElementById("codeInput").value.trim();
+
+        if (code === "/archive17/") {
+
+            window.location.href = "archive17.html";
+
+        } else {
+
+            document.getElementById("message").innerHTML =
+                "ACCESS DENIED";
+
+        }
+
+    }
 
 }
 
