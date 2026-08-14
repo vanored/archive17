@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BENEATH</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            background: #050505;
+            color: #b8ffb8;
+
+            font-family: "Courier New", monospace;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 30px;
+        }
+
+        .terminal {
+            width: 800px;
+            max-width: 95%;
+
+            padding: 45px;
+
+            border: 1px solid #333;
+
+            background: #080808;
+
+            box-shadow:
+                0 0 40px rgba(0, 255, 0, 0.05);
+        }
+
+        h1 {
+            margin: 0;
+
+            text-align: center;
+
+            font-size: 52px;
+
+            font-weight: normal;
+
+            letter-spacing: 12px;
+
+            color: #b8ffb8;
+        }
+
+        .line {
+            height: 1px;
+
+            background: #222;
+
+            margin: 35px 0;
+        }
+
+        .text {
+            color: #888;
+
+            font-size: 16px;
+
+            line-height: 1.9;
+        }
+
+        .hint {
+            margin-top: 25px;
+
+            padding: 25px;
+
+            border: 1px solid #333;
+
+            background: #060606;
+
+            color: #b8ffb8;
+
+            line-height: 2;
+
+            font-size: 16px;
+        }
+
+        .numbers {
+            margin-top: 25px;
+
+            padding: 20px;
+
+            border-left: 2px solid #333;
+
+            color: #777;
+
+            line-height: 2;
+        }
+
+        .example {
+            color: #b8ffb8;
+        }
+
+        .footer {
+            margin-top: 35px;
+
+            text-align: center;
+
+            color: #444;
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="terminal">
+
+    <h1>BENEATH</h1>
+
+    <div class="line"></div>
+
+    <div class="text">
+
+        Некоторые цифры — это не просто цифры.<br>
+        Иногда ответ уже спрятан в самом названии.
+
+    </div>
+
+    <div class="hint">
+
+        <span class="example">
+            3 — «три» — 3 буквы.
+        </span>
+
+        <br><br>
+
+        Найди среди чисел то, у которого
+        количество букв в его названии
+        совпадает с самим числом.
+
+    </div>
+
+    <div class="numbers">
+
+        1 — один<br>
+        2 — два<br>
+        3 — три<br>
+        4 — четыре<br>
+        5 — пять<br>
+        6 — шесть<br>
+        7 — семь<br>
+        8 — восемь<br>
+        9 — девять<br>
+        10 — десять
+
+    </div>
+
+    <div class="line"></div>
+
+    <div class="footer">
+        ОТВЕТ — СЛЕДУЮЩИЙ КЛЮЧ
+    </div>
+
+</div>
+
+</body>
+</html>
