@@ -1,1 +1,161 @@
 
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ARCHIVE 17</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            background: #050505;
+            color: #b8ffb8;
+
+            font-family: "Courier New", monospace;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .terminal {
+            width: 800px;
+            max-width: 90%;
+
+            padding: 40px;
+
+            background: #080808;
+            border: 1px solid #333;
+
+            box-shadow:
+                0 0 40px rgba(0, 255, 0, 0.05);
+        }
+
+        h1 {
+            margin: 0 0 10px;
+
+            font-size: 28px;
+            letter-spacing: 4px;
+        }
+
+        .subtitle {
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .line {
+            height: 1px;
+            background: #222;
+
+            margin: 25px 0;
+        }
+
+        .doors {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .door {
+            display: block;
+
+            color: #777;
+            text-decoration: none;
+
+            padding: 8px 10px;
+
+            border-left: 1px solid transparent;
+
+            transition: 0.15s;
+        }
+
+        .door:hover {
+            color: #b8ffb8;
+            border-left: 1px solid #b8ffb8;
+            background: #0b100b;
+        }
+
+        .cursor {
+            display: inline-block;
+
+            width: 8px;
+            height: 16px;
+
+            margin-top: 25px;
+
+            background: #b8ffb8;
+
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="terminal">
+
+    <h1>ROOM ACCESS</h1>
+
+    <div class="subtitle">
+        SELECT DOOR
+    </div>
+
+    <div class="line"></div>
+
+    <div class="doors">
+
+        <a class="door" href="door.html">door_1</a>
+        <a class="door" href="door.html">door_2</a>
+        <a class="door" href="door.html">door_3</a>
+        <a class="door" href="door.html">door_4</a>
+        <a class="door" href="door.html">door_5</a>
+        <a class="door" href="door.html">door_6</a>
+        <a class="door" href="door.html">door_7</a>
+        <a class="door" href="door.html">door_8</a>
+        <a class="door" href="door.html">door_9</a>
+        <a class="door" href="door.html">door_10</a>
+        <a class="door" href="door.html">door_11</a>
+        <a class="door" href="door.html">door_12</a>
+        <a class="door" href="door.html">door_13</a>
+        <a class="door" href="door.html">door_14</a>
+        <a class="door" href="door.html">door_15</a>
+        <a class="door" href="door.html">door_16</a>
+
+        <a class="door" href="door17.html">door_17</a>
+
+        <a class="door" href="door.html">door_18</a>
+        <a class="door" href="door.html">door_19</a>
+        <a class="door" href="door.html">door_20</a>
+        <a class="door" href="door.html">door_21</a>
+        <a class="door" href="door.html">door_22</a>
+        <a class="door" href="door.html">door_23</a>
+        <a class="door" href="door.html">door_24</a>
+        <a class="door" href="door.html">door_25</a>
+        <a class="door" href="door.html">door_26</a>
+        <a class="door" href="door.html">door_27</a>
+        <a class="door" href="door.html">door_28</a>
+        <a class="door" href="door.html">door_29</a>
+        <a class="door" href="door.html">door_30</a>
+
+    </div>
+
+    <span class="cursor"></span>
+
+</div>
+
+</body>
+</html>
