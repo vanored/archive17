@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>BENEATH</title>
+    <title>ARCHIVE 17</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             min-height: 100vh;
+
             background: #050505;
             color: #b8ffb8;
+
             font-family: "Courier New", monospace;
 
             display: flex;
@@ -19,69 +25,112 @@
             align-items: center;
         }
 
-        .box {
+        .terminal {
             width: 800px;
             max-width: 90%;
+
             padding: 40px;
 
-            border: 1px solid #333;
             background: #080808;
+            border: 1px solid #333;
 
-            text-align: center;
+            box-shadow:
+                0 0 40px rgba(0, 255, 0, 0.05);
         }
 
-        .title {
-            font-size: 55px;
-            letter-spacing: 12px;
-            margin-bottom: 30px;
+        .header {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 25px;
         }
 
-        .hint {
+        h1 {
+            margin: 0 0 30px;
+
+            font-size: 28px;
+            letter-spacing: 4px;
+        }
+
+        .line {
+            height: 1px;
+            background: #222;
+
+            margin: 25px 0;
+        }
+
+        .message {
             color: #b8ffb8;
-            font-size: 20px;
-            margin-bottom: 30px;
+            font-size: 18px;
+            line-height: 1.8;
         }
 
         .numbers {
-            text-align: left;
+            margin-top: 25px;
 
-            padding: 25px;
+            color: #b8ffb8;
 
-            border: 1px solid #333;
-
-            font-size: 18px;
-
+            font-size: 20px;
             line-height: 2;
+
+            word-break: break-word;
+        }
+
+        .warning {
+            margin-top: 35px;
+
+            color: #555;
+
+            font-size: 13px;
+        }
+
+        .cursor {
+            display: inline-block;
+
+            width: 8px;
+            height: 16px;
+
+            margin-top: 25px;
+
+            background: #b8ffb8;
+
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<div class="box">
+<div class="terminal">
 
-    <div class="title">
-        BENEATH
+    <div class="header">
+        ARCHIVE 17 // FILE 001
     </div>
 
-    <div class="hint">
-        Сравни число с тем, как оно пишется.
+    <h1>ARCHIVE 17</h1>
+
+    <div class="line"></div>
+
+    <div class="message">
+        НЕ ПРОСТО ЦИФРЫ
     </div>
 
     <div class="numbers">
-
-        1 — один<br>
-        2 — два<br>
-        3 — три<br>
-        4 — четыре<br>
-        5 — пять<br>
-        6 — шесть<br>
-        7 — семь<br>
-        8 — восемь<br>
-        9 — девять<br>
-        10 — десять
-
+        19,5,22,5,14,20,5,5,14, ,19,5,22,5,14,20,5,5,14.
     </div>
+
+    <div class="line"></div>
+
+    <div class="warning">
+        [ DATA CORRUPTED ]
+    </div>
+
+    <span class="cursor"></span>
 
 </div>
 
