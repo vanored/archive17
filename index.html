@@ -108,9 +108,7 @@
 
         #message {
             margin-top: 15px;
-
             min-height: 25px;
-
             color: #888;
         }
 
@@ -209,29 +207,65 @@ function enterArchive() {
 
 function checkCode(event) {
 
-    if (event.key === "Enter") {
+    if (event.key !== "Enter") {
+        return;
+    }
 
-        const code =
-            document.getElementById("codeInput").value.trim();
+    const input = document.getElementById("codeInput");
+    const message = document.getElementById("message");
 
-        if (code === "/archive17/") {
+    const code = input.value.trim();
 
-            window.location.href = "archive17.html";
+    /*
+        АРХИВ 17
+        Главные коды квеста
+    */
 
-        }
+    if (code === "/archive17/") {
 
-        else if (code === "/beneath/") {
+        message.innerHTML = "ACCESS GRANTED";
 
-            window.location.href = "beneath.html";
+        setTimeout(function () {
+            window.location.href = "system_17.html";
+        }, 1000);
 
-        }
+    }
 
-        else {
+    else if (code.toUpperCase() === "СЕВАСТОПОЛЬ") {
 
-            document.getElementById("message").innerHTML =
-                "ACCESS DENIED";
+        message.innerHTML = "ACCESS GRANTED";
 
-        }
+        setTimeout(function () {
+            window.location.href = "location_01.html";
+        }, 1000);
+
+    }
+
+    else if (code.toUpperCase() === "WAKE UP") {
+
+        message.innerHTML = "ACCESS GRANTED";
+
+        setTimeout(function () {
+            window.location.href = "recovery.html";
+        }, 1000);
+
+    }
+
+    else if (code.toUpperCase() === "SOON (CODE)") {
+
+        message.innerHTML = "ACCESS GRANTED";
+
+        setTimeout(function () {
+            window.location.href = "access_granted.html";
+        }, 1000);
+
+    }
+
+    else {
+
+        message.innerHTML = "ACCESS DENIED";
+
+        input.value = "";
 
     }
 
