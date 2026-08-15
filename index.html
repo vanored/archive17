@@ -75,6 +75,8 @@
             font-size: 15px;
 
             cursor: pointer;
+
+            transition: 0.2s;
         }
 
         button:hover {
@@ -108,7 +110,9 @@
 
         #message {
             margin-top: 15px;
+
             min-height: 25px;
+
             color: #888;
         }
 
@@ -199,11 +203,14 @@
 
 function enterArchive() {
 
-    document.getElementById("accessBox").style.display = "block";
+    const accessBox = document.getElementById("accessBox");
+    const input = document.getElementById("codeInput");
 
-    document.getElementById("codeInput").focus();
+    accessBox.style.display = "block";
 
+    input.focus();
 }
+
 
 function checkCode(event) {
 
@@ -216,58 +223,50 @@ function checkCode(event) {
 
     const code = input.value.trim();
 
-    /*
-        АРХИВ 17
-        Главные коды квеста
-    */
+
+    // ==============================
+    // КОД №1
+    // ==============================
 
     if (code === "/archive17/") {
 
-        message.innerHTML = "ACCESS GRANTED";
+        window.location.href = "archive17.html";
 
-        setTimeout(function () {
-            window.location.href = "system_17.html";
-        }, 1000);
-
+        return;
     }
 
-    else if (code.toUpperCase() === "СЕВАСТОПОЛЬ") {
 
-        message.innerHTML = "ACCESS GRANTED";
+    // ==============================
+    // КОД №2
+    // ==============================
 
-        setTimeout(function () {
-            window.location.href = "location_01.html";
-        }, 1000);
+    if (code.toUpperCase() === "СЕВАСТОПОЛЬ") {
 
+        window.location.href = "sevastopol.html";
+
+        return;
     }
 
-    else if (code.toUpperCase() === "WAKE UP") {
 
-        message.innerHTML = "ACCESS GRANTED";
+    // ==============================
+    // КОД №3
+    // ==============================
 
-        setTimeout(function () {
-            window.location.href = "recovery.html";
-        }, 1000);
+    if (code.toUpperCase() === "SOON (CODE)") {
 
+        window.location.href = "soon.html";
+
+        return;
     }
 
-    else if (code.toUpperCase() === "SOON (CODE)") {
 
-        message.innerHTML = "ACCESS GRANTED";
+    // ==============================
+    // НЕВЕРНЫЙ КОД
+    // ==============================
 
-        setTimeout(function () {
-            window.location.href = "access_granted.html";
-        }, 1000);
+    message.textContent = "ACCESS DENIED";
 
-    }
-
-    else {
-
-        message.innerHTML = "ACCESS DENIED";
-
-        input.value = "";
-
-    }
+    input.value = "";
 
 }
 
